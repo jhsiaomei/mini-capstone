@@ -14,5 +14,4 @@ class ProductsController < ApplicationController
   def confirmation
     @title = "Confirmation"
   end
-
 end
