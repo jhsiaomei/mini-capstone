@@ -1,1 +1,35 @@
-products.html.erb
+<h1>Current Inventory:</h1>
+<div>&nbsp</div>
+<img src="http://ecx.images-amazon.com/images/I/41qxgUjvGDL._SY300_.jpg">
+<h3> Dinosaur Type: <%= Product.find_by(id: 1).title %></h3>
+<h4><%= Product.find_by(id: 1).description %></h4>
+<p>Price <%= Product.find_by(id: 1).price %></p>
+<p>Quantity Available: <%= Product.find_by(id: 1).quantity %></p>
+  
+<div>&nbsp</div>
+<img src="http://i.istockimg.com/file_thumbview_approve/13446817/3/stock-illustration-13446817-velociraptor.jpg">
+<h3> Dinosaur Type: <%= Product.find_by(id: 2).title %></h3>
+<h4><%= Product.find_by(id: 2).description %></h4>
+<p>Price <%= Product.find_by(id: 2).price %></p>
+<p>Quantity Available: <%= Product.find_by(id: 2).quantity %></p>
+
+<div>&nbsp</div>
+<img src="http://thumbs.dreamstime.com/x/cute-baby-triceratops-cartoon-illustration-36399427.jpg">
+<h3> Dinosaur Type: <%= Product.find_by(id: 3).title %></h3>
+<h4><%= Product.find_by(id: 3).description %></h4>
+<p>Price <%= Product.find_by(id: 3).price %></p>
+<p>Quantity Available: <%= Product.find_by(id: 3).quantity %></p>
+
+<div>&nbsp</div>
+<img src="http://www.cliparthut.com/clip-arts/756/cartoon-dinosaur-clip-art-756954.png">
+<h3> Dinosaur Type: <%= Product.find_by(id: 4).title %></h3>
+<h4><%= Product.find_by(id: 4).description %></h4>
+<p>Price <%= Product.find_by(id: 4).price %></p>
+<p>Quantity Available: <%= Product.find_by(id: 4).quantity %></p>
+
+<div>&nbsp</div>
+<img src="http://i.istockimg.com/file_thumbview_approve/73579837/6/stock-illustration-73579837-cartoon-happy-ankylosaurus.jpg">
+<h3> Dinosaur Type: <%= Product.find_by(id: 5).title %></h3>
+<h4><%= Product.find_by(id: 5).description %></h4>
+<p>Price <%= Product.find_by(id: 5).price %></p>
+<p>Quantity Available: <%= Product.find_by(id: 5).quantity %></p>
