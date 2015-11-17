@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MiniCapstone</title>
+  <title><%= @title || "MiniCapstone" %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <div class="container">
+    <nav>
+      <ul class="nav nav-tabs">
+        <li role="presentation"><a href="/products" class="active">Home</a></li>
+        <li role="presentation"><a href="/products">Inventory</a></li>
+        <li role="presentation"><a href="/products/new">Add New</a></li>
+      </ul>
+    </nav>
+  </div>
 </head>
 <body>
+<div class="container">
 
 <%= yield %>
-
+</div>
 </body>
 </html>

@@ -1,0 +1,11 @@
+<h1>Current Inventory:</h1>
+<div>&nbsp</div>
+
+<% @products.each do |product| %>
+  <h3>Dinosaur Type: <a href="/products/<%= product.id %>"><%= product.title %></a></h3>
+  <p><strong>Description: </strong><%= product.description %></p>
+  <p><strong>Price: </strong><%= product.price %></p>
+  <p><strong>Quantity: </strong><%= product.quantity %></p>
+  <p>&nbsp</p>
+<% end %>
+</div>
