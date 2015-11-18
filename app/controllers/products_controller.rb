@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
         price: params[:price],
         quantity: params[:quantity]
       )
+    flash[:success] = "You successfully created this dinosaur!"
     redirect_to '/products'
   end
 
@@ -34,11 +35,13 @@ class ProductsController < ApplicationController
         price: params[:price],
         quantity: params[:quantity]
       )
+    flash[:success] = "You successfully updated this dinosaur!"
     redirect_to "/products"
   end
 
   def destroy
     product = Product.find_by(id: params[:id])
     product.destroy
+    flash[:danger] = "You successfully deleted a dinosaur."
   end
 end

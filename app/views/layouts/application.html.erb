@@ -7,18 +7,36 @@
   <%= csrf_meta_tags %>
   <div class="container">
     <nav>
-      <ul class="nav nav-tabs">
-        <li role="presentation"><a href="/products" class="active">Home</a></li>
-        <li role="presentation"><a href="/products">Inventory</a></li>
-        <li role="presentation"><a href="/products/new">Add New</a></li>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/products">DINOSAURS</a>
+    </div>
+    <div class="collapse navbar-collapse" id="  ">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/products">Inventory<span class="sr-only">(current)</span></a></li>
+        <li><a href="/products/new">Add New</a></li>
       </ul>
+    </div>
     </nav>
   </div>
 </head>
 <body>
-<div class="container">
 
-<%= yield %>
+<div class="container">
+  <div>
+    <% flash.each do |name, message| %>
+      <div class="alert alert-<%= name %> alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><%= message %>
+      </div>
+    <% end %>
+    <%= yield %>
+  </div>
 </div>
+
 </body>
 </html>
