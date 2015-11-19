@@ -3,6 +3,6 @@
 <p><strong>Price: </strong><%= @product.price %></p>
 <p><strong>Quantity: </strong><%= @product.quantity %></p>
 <p>&nbsp</p>
-<div><%= link_to "Edit this dinosaur", "/products/#{@product.id}/edit" %></div>
-<div><%= link_to "Delete this dinosaur", "/products/#{@product.id}", method: :delete %></div>
-<div><%= link_to "View current inventory", "/products" %></div>
+<a class="btn btn-default" href="/products/<%= @product.id %>/edit">Edit this dinosaur</a>
+<%= button_to "Delete this dinosaur", "/products/#{@product.id}", method: :destroy, class: "btn btn-default" %>
+<a class="btn btn-default" href="/products">View current inventory</a>
