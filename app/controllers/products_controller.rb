@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
   def show
     @title = "Product"
     @product = Product.find_by(id: params[:id])
+    @message
   end
 
   def edit
