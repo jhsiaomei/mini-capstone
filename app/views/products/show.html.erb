@@ -1,5 +1,6 @@
 <h3>Dinosaur Type: <%= @product.title %></a></h3>
 <p><strong>Description: </strong><%= @product.description %></p>
+<img src="<%= @product.image %>">
 <p><strong>Quantity: </strong><%= @product.quantity %></p>
 <p><strong>Price: </strong><%= @product.display_price %></p>
 <h5><%= @product.sale_message %></h5>
@@ -8,5 +9,4 @@
 <h4>Total: <%= @product.display_total %></h4>
 <a class="btn btn-default" href="/products/<%= @product.id %>/edit">Edit this dinosaur</a>
 <div><%= button_to "Delete this dinosaur", "/products/#{@product.id}", method: :delete, class: "btn btn-default" %></div>
-<!-- <div><%= link_to "Delete this dinosaur", "/products/#{@product.id}", method: :delete %></div> -->
 <a class="btn btn-default" href="/products">View current inventory</a>

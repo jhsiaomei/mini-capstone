@@ -1,5 +1,12 @@
 <h1 align="center">Current Inventory</h1>
 <div>&nbsp</div>
+<div class="row" text_align="center">
+    <div class="col-md-6"><center><a href="/products?sort_by=price&order_by=asc">Sort by price (lowest to highest)</a></center></div>
+    <div class='col-md-6"'><center><a href="/products?sort_by=price&order_by=desc">Sort by price (highest to lowest)</a></center></div>
+<div>&nbsp</div>
+<div>&nbsp</div>
+
+<!-- <div><%= @rand_product %></div> -->
 
 <div class="row">
   <% @products.each do |product| %>

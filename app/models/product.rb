@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  DISCOUNT_THRESHOLD = 25000
   def display_price
     "$#{price}"
   end
@@ -12,7 +13,7 @@ class Product < ActiveRecord::Base
   end
 
   def sale_message
-    if price.to_i < 25000
+    if price < DISCOUNT_THRESHOLD
       @message = "Discount Item!"
     else
       @message = "On Sale!"
@@ -20,11 +21,11 @@ class Product < ActiveRecord::Base
   end
 
   def tax
-    tax_charged = price.to_i * 0.090
+    tax_charged = price * 0.09
   end
 
   def total
-    total_cost = price.to_i + tax.to_i
-    total_cost.to_s
+    total_cost = price + tax
+    total_cost
   end
 end
