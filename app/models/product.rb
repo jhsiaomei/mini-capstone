@@ -1,5 +1,8 @@
 class Product < ActiveRecord::Base
+  belongs_to :supplier
+
   DISCOUNT_THRESHOLD = 25000
+  
   def display_price
     "$#{price}"
   end
