@@ -1,8 +1,10 @@
 <h1 align="center">Current Inventory</h1>
 <div>&nbsp</div>
 <div class="row" text_align="center">
-    <div class="col-md-6"><center><a href="/products?sort_by=price&order_by=asc">Sort by price (lowest to highest)</a></center></div>
-    <div class='col-md-6"'><center><a href="/products?sort_by=price&order_by=desc">Sort by price (highest to lowest)</a></center></div>
+    <div class="col-md-2"></div>
+    <div class="col-md-4"><center><a href="/products?sort_by=price&order_by=asc">Sort by price (lowest to highest)</a></center></div>
+    <div class="col-md-4"><center><a href="/products?sort_by=price&order_by=desc">Sort by price (highest to lowest)</a></center></div>
+    <div class="col-md-2"></div>
 <div>&nbsp</div>
 <div>&nbsp</div>
 
@@ -16,6 +18,7 @@
         <div class="caption" style="vertical-align:bottom">
           <h3>Dinosaur Type: <a href="/products/<%= product.id %>"><%= product.title %></a></h3>
           <!-- <p><strong>Description: </strong><%= product.description %></p> -->
+          <p><strong>Supplied by: </strong><%= product.supplier.name %></p>
           <p><strong>Price: </strong><%= product.display_price %></p>
           <!-- <p><strong>Quantity: </strong><%= product.quantity %></p> -->
           <p>&nbsp</p>

@@ -2,6 +2,7 @@
 <p><strong>Description: </strong><%= @product.description %></p>
 <img src="<%= @product.image %>">
 <p><strong>Quantity: </strong><%= @product.quantity %></p>
+<p><strong>Supplied by: </strong><%= @product.supplier.name %></p>
 <p><strong>Price: </strong><%= @product.display_price %></p>
 <h5><%= @product.sale_message %></h5>
 <p>&nbsp</p>
