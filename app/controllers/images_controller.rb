@@ -9,5 +9,7 @@ class ImagesController < ApplicationController
       product_id: params[:product_id]
     )
     flash[:success] = "You successfully uploaded a photo!"
+
+    redirect_to '/products'
   end
 end
