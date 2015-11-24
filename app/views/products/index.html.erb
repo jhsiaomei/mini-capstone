@@ -14,7 +14,7 @@
   <% @products.each do |product| %>
     <div class="col-md-4">
       <div class="thumbnail">
-        <img src="<%= product.image %>">
+        <img src="<%= product.images.first.link %>">
         <div class="caption" style="vertical-align:bottom">
           <h3>Dinosaur Type: <a href="/products/<%= product.id %>"><%= product.title %></a></h3>
           <!-- <p><strong>Description: </strong><%= product.description %></p> -->

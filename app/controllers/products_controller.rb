@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     if sort_by && sort_order
       @products = Product.order(sort_by => sort_order)
     elsif sort_by == "price"
-      @products = Product.where("price < ?", 25000) 
+      @products = Product.where("price < ?", 25000)
     elsif name
       @products = Product.where("title LIKE ?", "%#{name}%")
     else
@@ -36,8 +36,10 @@ class ProductsController < ApplicationController
    
     if params[:id] == "random"
       @product = Product.order("RAND()").first
+      @images = Image.where("product_id = ?", @product.id)
     else
       @product = Product.find_by(id: params[:id])
+      @images = Image.where("product_id = ?", @product.id)
     end
 
     @message

@@ -1,6 +1,8 @@
 <h3>Dinosaur Type: <%= @product.title %></a></h3>
 <p><strong>Description: </strong><%= @product.description %></p>
-<img src="<%= @product.image %>">
+<% @images.each do |image| %>
+  <img src="<%= image.link %>">
+<% end %>
 <p><strong>Quantity: </strong><%= @product.quantity %></p>
 <p><strong>Supplied by: </strong><%= @product.supplier.name %></p>
 <p><strong>Price: </strong><%= @product.display_price %></p>
