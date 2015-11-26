@@ -8,5 +8,6 @@ class OrdersController < ApplicationController
   end
 
   def show
+    @order = Order.last
   end
 end
