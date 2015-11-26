@@ -6,11 +6,11 @@
 <p><strong>Quantity: </strong><%= @product.quantity %></p>
 <p><strong>Supplied by: </strong><%= @product.supplier.name %></p>
 <p><strong>Product ID: </strong><%= @product.id %></p>
-<p><strong>Price: </strong><%= @product.display_price %></p>
+<p><strong>Price: </strong><%= number_to_currency(@product.price) %></p>
 <h5><%= @product.sale_message %></h5>
 <p>&nbsp</p>
-<p>Tax: <%= @product.display_tax %></p>
-<h4>Total: <%= @product.display_total %></h4>
+<p>Tax: <%= number_to_currency(@product.tax) %></p>
+<h4>Total: <%= number_to_currency(@product.total) %></h4>
 <p>&nbsp</p>
 
 <% if user_signed_in? %></div>
