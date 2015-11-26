@@ -55,9 +55,8 @@ class ProductsController < ApplicationController
         title: params[:title],
         description: params[:description],
         price: params[:price],
-        quantity: params[:quantity],
-        image: params[:image]
-      )
+        quantity: params[:quantity]
+        )
     flash[:success] = "You successfully updated this dinosaur!"
     redirect_to "/products"
   end
