@@ -10,6 +10,25 @@
 <p>&nbsp</p>
 <p>Tax: <%= @product.display_tax %></p>
 <h4>Total: <%= @product.display_total %></h4>
+<p>&nbsp</p>
+
+<% if user_signed_in? %></div>
+  <h3>Buy this dinosaur:</h3>
+  <%= form_tag "/orders", method: :post do %>
+    <div class="form-group">
+      <%= label_tag :quantity %>
+      <%= text_field_tag :quantity, nil, class: "form-control" %>
+    </div>
+    <div>
+      <%= button_tag 'Buy now!', class: "btn btn-default" %>
+    </div>
+  <% end %>
+<% end %>
+
+<p>&nbsp</p>
+<p>&nbsp</p>
 <a class="btn btn-default" href="/products/<%= @product.id %>/edit">Edit this dinosaur</a>
 <div><%= button_to "Delete this dinosaur", "/products/#{@product.id}", method: :delete, class: "btn btn-default" %></div>
 <a class="btn btn-default" href="/products">View current inventory</a>
+
+
