@@ -5,6 +5,7 @@
 <% end %>
 <p><strong>Quantity: </strong><%= @product.quantity %></p>
 <p><strong>Supplied by: </strong><%= @product.supplier.name %></p>
+<p><strong>Categories: </strong><%= @product_categories.join(", ") %></p>
 <p><strong>Product ID: </strong><%= @product.id %></p>
 <p><strong>Price: </strong><%= number_to_currency(@product.price) %></p>
 <h5><%= @product.sale_message %></h5>
