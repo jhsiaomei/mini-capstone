@@ -35,7 +35,11 @@ class ProductsController < ApplicationController
     @title = "Product"
    
     if params[:id] == "random"
-      @product = Product.order("RAND()").first
+      if Rails.env.development?
+        @product = Product.order("RAND()").first
+      else
+        @product = Product.order("RANDOM()").first
+      end
       @images = Image.where("product_id = ?", @product.id)
     else
       @product = Product.find_by(id: params[:id])
