@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
   has_many :images
   belongs_to :user
   has_many :orders
+  has_many :categorized_products
 
   DISCOUNT_THRESHOLD = 25000
 
