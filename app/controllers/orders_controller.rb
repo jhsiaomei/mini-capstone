@@ -3,8 +3,8 @@ class OrdersController < ApplicationController
     product = Product.find_by(id: params[:product_id])
     
     subtotal = product.price * params[:quantity].to_i
-    tax = subtotal * product.tax
-    total = subtotal + product.tax
+    tax = product.tax * params[:quantity].to_i
+    total = subtotal + tax
 
     order = Order.create(
       product_id: params[:product_id],
