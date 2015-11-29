@@ -11,6 +11,8 @@ class ProductsController < ApplicationController
       @products = Product.where("price < ?", 25000)
     elsif name
       @products = Product.where("title LIKE ?", "%#{name}%")
+    elsif params[:category]
+      @products = Category.find_by(name: params[:category]).products
     else
       @products = Product.all
     end
