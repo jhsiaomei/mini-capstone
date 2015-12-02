@@ -16,7 +16,7 @@
 
 <% if user_signed_in? %></div>
   <h3>Buy this dinosaur:</h3>
-  <%= form_tag "/orders", method: :post do %>
+  <%= form_tag "/carted_products", method: :post do %>
     <div class="form-group">
       <%= hidden_field_tag :product_id, @product.id %>
     </div>
