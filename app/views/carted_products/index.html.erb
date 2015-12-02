@@ -1,0 +1,8 @@
+<h2>Your shopping cart:</h2>
+<div>&nbsp</div>
+<% @carted_products.each do |carted_product| %>
+  <p><strong>Dinosaur: </strong><%= carted_product.product.title %></p>
+  <p><strong>Quantity: </strong><%= carted_product.quantity %></p>
+  <p><strong>Price per Dinosaur: </strong><%= number_to_currency(carted_product.product.price) %></p>
+  <div>&nbsp</div>
+<% end %>
