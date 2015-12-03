@@ -4,6 +4,14 @@
   <p><strong>Dinosaur: </strong><%= carted_product.product.title %></p>
   <p><strong>Quantity: </strong><%= carted_product.quantity %></p>
   <p><strong>Price per Dinosaur: </strong><%= number_to_currency(carted_product.product.price) %></p>
+  <%= form_tag "/carted_products/#{carted_product.id}", method: :delete do %>
+    <div class="form-group">
+      <%= hidden_field_tag :carted_product_id, carted_product.id %>
+    </div>
+    <div class="form-group">
+      <%= button_tag 'Remove from cart!', class: 'btn btn-default' %>
+    </div>
+  <% end %>
   <div>&nbsp</div>
 <% end %>
 <div>&nbsp</div>
