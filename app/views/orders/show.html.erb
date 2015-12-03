@@ -1,5 +1,11 @@
 
 
- <h2>You placed an order!</h2>
- <p><strong>Order ID: </strong><%= @order.id %></p>
- <p><strong>Total: </strong><%= number_to_currency(@order.total) %></p>
+<h2>You placed an order!</h2>
+<p><strong>Order ID: </strong><%= @order.id %></p>
+<p><strong>Total: </strong><%= number_to_currency(@order.total) %></p>
+<p>&nbsp</p>
+ <% @order.carted_products.each do |carted_product| %>
+  <p><strong>Dinosaur: </strong><%= carted_product.product.title %></p>
+  <p><strong>Quantity: </strong><%= carted_product.quantity %></p>
+  <p>&nbsp</p>
+<% end %>
