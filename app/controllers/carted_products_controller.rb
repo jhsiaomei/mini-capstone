@@ -1,6 +1,6 @@
 class CartedProductsController < ApplicationController
   def index
-    @carted_products = CartedProduct.where("status = ?", "carted")
+    @carted_products = CartedProduct.where("status = ? AND user_id = ?", "carted", current_user.id)
   end
 
   def create

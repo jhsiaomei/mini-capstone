@@ -6,3 +6,10 @@
   <p><strong>Price per Dinosaur: </strong><%= number_to_currency(carted_product.product.price) %></p>
   <div>&nbsp</div>
 <% end %>
+<div>&nbsp</div>
+<div>&nbsp</div>
+<%= form_tag "/orders", method: :post do %>
+  <div class="form-group">
+    <%= button_tag 'Buy now!', class: 'btn btn-default' %>
+  </div>
+<% end %>

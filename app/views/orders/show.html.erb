@@ -1,12 +1,5 @@
-<h3>Your order details:</h3>
-<p><strong>Order #: </strong><%= @order.id %></p>
-<p><strong>Quantity: </strong><%= @order.quantity %></p>
-<p><strong>Subtotal: </strong><%= number_to_currency(@order.subtotal) %></p>
-<p><strong>Tax: </strong><%= number_to_currency(@order.tax) %></p>
-<p><strong>Total: </strong><%= number_to_currency(@order.total) %></p>
-<p>&nbsp</p>
-<p><strong>Email Address: </strong><%= @order.user.email %></p>
-<p><strong>Purchased At: </strong><%= @order.created_at %></p>
-<p>&nbsp</p>
-<p><strong>Order: </strong><%= @order.product.title %></p>
-<img src="<%= @order.product.images.first.link %>">
+
+
+ <h2>You placed an order!</h2>
+ <p><strong>Order ID: </strong><%= @order.id %></p>
+ <p><strong>Total: </strong><%= number_to_currency(@order.total) %></p>
