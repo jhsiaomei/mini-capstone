@@ -19,16 +19,16 @@
         <div class="collapse navbar-collapse" id="  ">
           <ul class="nav navbar-nav">
             <li class="active"><a href="/products">Inventory<span class="sr-only">(current)</span></a></li>
-            <li><a href="/products/new">Add Dino</a></li>
-            <li><a href="/images/new">Add Images</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort by<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <% Category.all.each do |category| %>
                   <li><a href="/products?category=<%= category.name %>"><%= category.name %></a></li>
                 <% end %>
-              <li><a href="/products/random">Random Dino</a></li>
-            <li><a href="/products?sort_by=price">Discount Items!</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/products/random">Random Dinosaur</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/products?sort_by=price">Discount Items!</a></li>
               </ul>
             </li>
             <li><form class="navbar-form" role="search">
@@ -39,12 +39,17 @@
                 <%= button_tag 'Submit', class: "btn btn-default" %>
               <% end %>
             </form></li>
-            <li><a href="/carted_products"><img src="http://www.meh.ro/wp-content/uploads/2012/02/meh.ro9175.jpg" height="35px"></a>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            <li><a href="/carted_products"><img src="http://www.meh.ro/wp-content/uploads/2012/02/meh.ro9175.jpg" height="35px" padding="0px"></a>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More Links<span class="caret"></span></a>
               <ul class="dropdown-menu">
+                <% if current_user && current_user.admin %>
+                  <li><a href="/products/new">Add New Dinosaur</a></li>
+                  <li><a href="/images/new">Add New Images</a></li>
+                  <li role="separator" class="divider"></li>
+                <% end %>
                 <% if user_signed_in? %>
                   <li><%= link_to "Sign Out", "/users/sign_out", method: :delete %></li>
                 <% else %>

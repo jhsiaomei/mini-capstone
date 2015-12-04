@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin!, except: [:index, :show]
+
   def index
     @title = "Products"
 
@@ -71,5 +73,13 @@ class ProductsController < ApplicationController
     product = Product.find_by(id: params[:id])
     product.destroy
     flash[:danger] = "You successfully deleted a dinosaur."
+  end
+
+  private
+
+  def authenticate_admin!
+    unless current_user && current_user.admin
+      redirect_to "/products"
+    end
   end
 end

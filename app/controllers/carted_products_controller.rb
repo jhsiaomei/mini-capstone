@@ -1,7 +1,11 @@
 class CartedProductsController < ApplicationController
   def index
-    @carted_products = CartedProduct.where("status = ? AND user_id = ?", "carted", current_user.id)
-    if @carted_products == []
+    if current_user
+      @carted_products = CartedProduct.where("status = ? AND user_id = ?", "carted", current_user.id)
+      if @carted_products == []
+        redirect_to '/products'
+      end
+    else
       redirect_to '/products'
     end
   end
