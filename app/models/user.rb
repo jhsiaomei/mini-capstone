@@ -7,4 +7,10 @@ class User < ActiveRecord::Base
   has_many :carted_products
   has_many :products
   has_many :orders
+
+  validates :email, presence: true
+  validates :email, uniqueness: true
+  validates :admin, presence: true
+  validates :admin, inclusion: { in: %w(0 1) }
+  validates :password, presence: true
 end

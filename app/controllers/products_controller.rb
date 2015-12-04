@@ -21,18 +21,23 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @product = Product.new
   end
 
   def create
-    product = Product.create(
+    @product = Product.new(
         title: params[:title],
         description: params[:description],
         price: params[:price],
         quantity: params[:quantity],
-        image: params[:image]
+        supplier: params[:supplier]
       )
-    flash[:success] = "You successfully created this dinosaur!"
-    redirect_to '/products'
+    if @product.save
+      flash[:success] = "You successfully created this dinosaur!"
+      redirect_to "/products/#{@product.id}"
+    else
+      render :new 
+    end
   end
 
   def show
@@ -55,18 +60,22 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find_by(id: params[:id])
+
   end
 
   def update
-    product = Product.find_by(id: params[:id])
-    product.update(
+    @product = Product.find_by(id: params[:id])
+    if @product.update(
         title: params[:title],
         description: params[:description],
         price: params[:price],
         quantity: params[:quantity]
         )
-    flash[:success] = "You successfully updated this dinosaur!"
-    redirect_to "/products"
+      flash[:success] = "You successfully updated this dinosaur!"
+      redirect_to "/products/#{@product.id}"
+    else
+      render :edit
+    end
   end
 
   def destroy
