@@ -1,0 +1,11 @@
+<h2>Suppliers</h2>
+<div>&nbsp</div>
+<% @suppliers.each do |supplier| %>
+  <p><strong>Company Name: </strong><a href="/suppliers/<%= supplier.id %>"><%= supplier.name %></a></p>
+  <p><strong>Phone Number: </strong><%= supplier.phone %></p>
+  <p><strong>Email Address: </strong><%= supplier.email %></p>
+  <div>&nbsp</div>
+<% end %>
+<div>&nbsp</div>
+<div>&nbsp</div>
+<h4><%= link_to "Add New Supplier", "/suppliers/new" %></h4>
