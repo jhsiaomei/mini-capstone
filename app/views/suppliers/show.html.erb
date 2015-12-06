@@ -3,8 +3,9 @@
 <p><strong>Company Name: </strong><%= @supplier.name %></p>
 <p><strong>Phone Number: </strong><%= @supplier.phone %></p>
 <p><strong>Email Address: </strong><%= @supplier.email %></p>
+<p><strong>Active? </strong><%= @supplier.active %></p>
 <div>&nbsp</div>
 <div>&nbsp</div>
 <p><%= link_to "Edit this Supplier", "/suppliers/#{@supplier.id}/edit" %></p>
-<p><%= link_to "Delete this Supplier", "/suppliers/#{@supplier.id}", method: :delete %></p>
+<p><%= link_to "Delete this Supplier", "/suppliers/#{@supplier.id}", false => :active, method: :patch %></p>
 <p><%= link_to "View All Suppliers", "/suppliers" %></p>

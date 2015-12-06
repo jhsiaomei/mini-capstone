@@ -22,8 +22,13 @@ class SuppliersController < ApplicationController
 
   def update
     @supplier = Supplier.find_by(id: params[:id])
-    @supplier.update(params[:supplier])
-    redirect_to "/suppliers/#{@supplier.id}"
+    if params[:supplier]
+      @supplier.update(params[:supplier])
+      redirect_to "/suppliers/#{@supplier.id}"
+    else
+      @supplier.update(active: 0)
+      redirect_to "/suppliers"
+    end
   end
 
   def destroy
